@@ -2,6 +2,8 @@
 
 A very basic example of creating an HTTP server endpoint with Meteor.
 
+### Screenshot
+
 <img src="screenshot.png" width="400">
 
 ### Installation

@@ -1,6 +1,6 @@
 {
   "name": "meteor_api_test",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "meteor run",
     "test": "meteor test --once --driver-package meteortesting:mocha",
@@ -16,6 +16,7 @@
     "raw-body": "^2.3.3",
     "urlencoded-body-parser": "^2.0.1"
   },
+  "license": "MIT",
   "meteor": {
     "mainModule": {
       "client": "client/main.js",

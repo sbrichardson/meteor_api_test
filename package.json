@@ -1,0 +1,39 @@
+{
+  "name": "meteor_api_test",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "format": "prettier --write --config package.json \"{,server/**/,client/**/}*.js\""
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.48",
+    "content-type": "^1.0.4",
+    "formidable": "^1.2.1",
+    "meteor-node-stubs": "^0.4.1",
+    "raw-body": "^2.3.3"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    },
+    "testModule": "test/main.js"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "useTabs": false,
+    "printWidth": 80,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "arrowParens": "avoid"
+  },
+  "devDependencies": {
+    "prettier": "^1.13.5"
+  }
+}

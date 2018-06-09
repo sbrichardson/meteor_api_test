@@ -26,12 +26,12 @@ WebApp.connectHandlers.use('/hello', async (req, res, next) => {
 
 /**
  * Additional example using getJson
- * 
+ *
  * @example
- *
- // import { getJson } from './parser'
- *
  * // Example using getJson from zeit/micro (renamed from json() there)
+ *
+ * import { getJson } from './parser'
+ *
  * const json = await getJson(req).catch(e => {
  *   console.error('/hello - err catch parsing JSON:\n', e)
  * })

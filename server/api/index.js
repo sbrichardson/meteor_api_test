@@ -1,7 +1,6 @@
 import { Meteor } from 'meteor/meteor'
 import { WebApp } from 'meteor/webapp'
 import parse from 'urlencoded-body-parser'
-// import { getJson } from './parser'
 
 WebApp.connectHandlers.use('/hello', async (req, res, next) => {
   const { headers } = req
@@ -26,7 +25,11 @@ WebApp.connectHandlers.use('/hello', async (req, res, next) => {
 })
 
 /**
+ * Additional example using getJson
+ * 
  * @example
+ *
+ // import { getJson } from './parser'
  *
  * // Example using getJson from zeit/micro (renamed from json() there)
  * const json = await getJson(req).catch(e => {

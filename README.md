@@ -2,7 +2,7 @@
 
 A very basic example of creating an HTTP server endpoint with Meteor.
 
-![screenshot](docs/screenshot.png)
+![screenshot](https://github.com/sbrichardson/meteor_api_test/blob/master/docs/screenshot.png)
 
 ### Installation
 

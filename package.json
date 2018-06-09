@@ -13,7 +13,8 @@
     "content-type": "^1.0.4",
     "formidable": "^1.2.1",
     "meteor-node-stubs": "^0.4.1",
-    "raw-body": "^2.3.3"
+    "raw-body": "^2.3.3",
+    "urlencoded-body-parser": "^2.0.1"
   },
   "meteor": {
     "mainModule": {

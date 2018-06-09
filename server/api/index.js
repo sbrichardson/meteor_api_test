@@ -1,16 +1,38 @@
 import { Meteor } from 'meteor/meteor'
 import { WebApp } from 'meteor/webapp'
-import { getJson } from './parser'
+import parse from 'urlencoded-body-parser'
+// import { getJson } from './parser'
 
 WebApp.connectHandlers.use('/hello', async (req, res, next) => {
-  console.info('/hello route hit, req\n', req)
+  const { headers } = req
 
-  const json = await getJson(req).catch(e => {
-    console.error('/hello - err catch parsing json', e)
+  console.info('/hello route - headers\n', headers)
+
+  const result = await parse(req).catch(e => {
+    console.error('/hello - err catch parsing urlencoded:\n', e)
   })
 
-  json && console.info('getJson parse result:\n', json)
+  console.info('\n\n** parse() urlencoded result:\n', result)
+
+  const msg = result && result.content ? result.content : '(No content)'
 
   res.writeHead(200)
-  res.end(`Hello world from: ${Meteor.release}`)
+  res.end(
+    `<html>
+      <h1>Hello world from: ${Meteor.release}</h1>
+      <h4>Provided Input: "${msg}"</h4>
+    </html>`
+  )
 })
+
+/**
+ * @example
+ *
+ * // Example using getJson from zeit/micro (renamed from json() there)
+ * const json = await getJson(req).catch(e => {
+ *   console.error('/hello - err catch parsing JSON:\n', e)
+ * })
+ *
+ * console.info('\n\n** getJson parse result:\n', json)
+ *
+ */

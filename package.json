@@ -1,6 +1,7 @@
 {
   "name": "meteor_api_test",
   "private": false,
+  "version": "0.1.0",
   "scripts": {
     "start": "meteor run",
     "test": "meteor test --once --driver-package meteortesting:mocha",
